@@ -1,0 +1,13 @@
+# Python / Flask
+__pycache__/
+*.pyc
+env/
+venv/
+*.egg-info/
+
+# IDE / OS noise
+.DS_Store
+
+# Secrets & local config
+.env
+*.pem

@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.sidebar input {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.sidebar button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sidebar button:hover {
+    background-color: #218838;
+}
+
+
+
+.main-content.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.main-content.flex-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure the container takes full width */
+    height: 100vh; /* Ensure the container takes full height */
+    padding: 20px;
+}
+
+
+
+.main-content img:hover {
+    /* transform: scale(1.05); Slightly enlarge the image on hover */
+    border-color: #333;
+}
+
+/* Styles for images in the grid */
+.grid-image {
+    width: 100%; /* Make the images fill their grid cells */
+    max-width: 300px; /* Limit the grid image size */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #ddd; /* Add a border to images */
+    border-radius: 5px; /* Add rounded corners */
+    transition: transform 0.3s; /* Add hover effect */
+}
+
+/* Styles for the outpainted image */
+.outpainted-image {
+    width: 100%; /* Take up full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Remove max-width limitation */
+    max-height: 100%; /* Ensure it uses the full container height */
+    display: block;
+    object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.draggable-text {
+    font-family: 'Montserrat', sans-serif; /* Use a clean, modern font */
+    font-size: 18px; /* Adjust size as needed */
+    color: #ffffff; /* White text color */
+    background-color: rgba(0, 0, 0, 0.8); /* Soft black background with slight transparency */
+    padding: 10px 10px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow to lift the box */
+    cursor: move; /* Show move cursor */
+    z-index: 10; /* Ensure it appears above other elements */
+    user-select: none; /* Prevent text selection during drag */
+}
+
+

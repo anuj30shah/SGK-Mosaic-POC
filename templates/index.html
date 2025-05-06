@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <form id="image-form">
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company" required>
+                
+                <label for="color">Product Color:</label>
+                <input type="text" id="color" name="color" required>
+                
+                <label for="product">Product Name:</label>
+                <input type="text" id="product" name="product" required>
+                
+                <label for="bg_color">Background Color:</label>
+                <input type="text" id="bg_color" name="bg_color" required>
+
+                <label for="model">Model:</label>
+                <select id="model" name="model" required>
+                    <option value="sdxl" selected>Stable Diffusion XL</option>
+                    <option value="nova">Amazon Nova Canvas</option>
+                </select>
+                
+                <button type="submit">Generate Images</button>
+            </form>
+            <form id="outpaint-form">
+                <label for="outpaint-scale">Outpaint Scale:</label>
+                <input type="range" id="outpaint-scale" name="outpaint-scale" min="0.2" max="0.8" step="0.01" value="0.5">
+        
+                <label for="orientation">Orientation:</label>
+                <select id="orientation" name="orientation">
+                    <option value="landscape">Landscape</option>
+                    <option value="portrait">Portrait</option>
+                </select>
+            </form>
+
+
+            <!-- New form for text overlay -->
+            <form id="text-form">
+                <!-- Add this inside your text-form -->
+                <!-- Add this inside your text-form -->
+                <label for="text1">Text 1:</label>
+                <input type="text" id="text1" name="text1">
+                <label for="font-size1">Font Size 1:</label>
+                <input type="range" id="font-size1" name="font-size1" min="10" max="50" value="16">
+
+                <label for="text2">Text 2:</label>
+                <input type="text" id="text2" name="text2">
+                <label for="font-size2">Font Size 2:</label>
+                <input type="range" id="font-size2" name="font-size2" min="10" max="50" value="16">
+
+                <label for="text3">Text 3:</label>
+                <input type="text" id="text3" name="text3">
+                <label for="font-size3">Font Size 3:</label>
+                <input type="range" id="font-size3" name="font-size3" min="10" max="50" value="16">
+
+                <label for="text4">Text 4:</label>
+                <input type="text" id="text4" name="text4">
+                <label for="font-size4">Font Size 4:</label>
+                <input type="range" id="font-size4" name="font-size4" min="10" max="50" value="16">
+
+                <button type="button" id="add-text-btn">Add Text</button>
+            </form>
+        </div>
+        
+        <div class="main-content" id="image-display">
+            <!-- Images and outpainted image will be displayed here -->
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
