@@ -1,4 +1,4 @@
-# Product‑Shot Generator (Flask + Amazon Bedrock)
+# Mosaic POC (Flask + Amazon Bedrock)
 
 A lightweight demo web app that creates marketing‑style product renders with Amazon Bedrock image models and lets users *out‑paint* any chosen render onto a larger canvas.
 
